@@ -23,19 +23,19 @@
 <h2>Why this exists</h2>
 <p>
   Pakistan has experienced recurrent, severe flooding over the past two decades, and part of what makes
-  response and prediction harder is a genuine gap in ground-level data collection — official monitoring
+  response and prediction harder is a genuine gap in ground-level data collection .Official monitoring
   infrastructure doesn't reach every affected community. FloodWatch is a small step toward closing that
-  gap: a simple app that lets local residents log flood conditions — water level, rainfall, drainage
-  blockages — from their own phones, with no assumption of internet access, formal training, or
+  gap: a simple app that lets local residents log flood conditions ; water level, rainfall, drainage
+  blockages from their own phones, with no assumption of internet access, formal training, or
   measurement equipment.
 </p>
 
 <h2>Core design decisions</h2>
 <ul>
   <li><strong>Local-first, always.</strong> Every report saves to an on-device Room database immediately, with zero network dependency at the point of submission. A report can be filed in a total connectivity blackout.</li>
-  <li><strong>Qualitative severity over false precision.</strong> Locals rarely have a measuring tape at a riverbank. Instead of a numeric cm/ft field, water level is reported on a plain-language severity scale (e.g. "Ankle to knee deep") — data people can actually give reliably.</li>
-  <li><strong>Sync is automatic and best-effort.</strong> Unsynced reports are queued and pushed to Firestore in the background via WorkManager, the moment connectivity returns — no manual "upload" step for the user.</li>
-  <li><strong>No paid infrastructure required.</strong> Firebase's free tier and OpenStreetMap tiles (via osmdroid) were chosen specifically to avoid any dependency on a billing account or card — deployment shouldn't be blocked by cost.</li>
+  <li><strong>Qualitative severity over false precision.</strong> Locals rarely have a measuring tape at a riverbank. Instead of a numeric cm/ft field, water level is reported on a plain-language severity scale (e.g. "Ankle to knee deep") data people can actually give reliably.</li>
+  <li><strong>Sync is automatic and best-effort.</strong> Unsynced reports are queued and pushed to Firestore in the background via WorkManager, the moment connectivity returns ,no manual "upload" step for the user.</li>
+  <li><strong>No paid infrastructure required.</strong> Firebase's free tier and OpenStreetMap tiles (via osmdroid) were chosen specifically to avoid any dependency on a billing account or card ,deployment shouldn't be blocked by cost.</li>
 </ul>
 
 <h2>Features</h2>
@@ -45,7 +45,7 @@
   <tr><td><strong>History</strong></td><td>Scrollable list of all local reports, newest first, each showing a sync-status indicator.</td></tr>
 </table>
 <p>
-  A map view was prototyped using osmdroid + OpenStreetMap tiles, but was cut from this version — OSM's
+  A map view was prototyped using osmdroid + OpenStreetMap tiles, but was cut from this version ,OSM's
   public tile server enforces strict rate limits and usage-policy requirements not well suited to reliable
   field use without a dedicated tile provider. GPS coordinates are still captured with every report, so a
   map view remains straightforward to reintroduce with a more production-appropriate tile source.
@@ -53,8 +53,8 @@
 
 <h3>Sync status indicator</h3>
 <p>
-  <span class="status-dot dot-orange"></span> Orange — saved locally, not yet uploaded<br>
-  <span class="status-dot dot-green"></span> Green — confirmed synced to Firestore
+  <span class="status-dot dot-orange"></span> Orange —> saved locally, not yet uploaded<br>
+  <span class="status-dot dot-green"></span> Green —> confirmed synced to Firestore
 </p>
 
 <h2>Data collected per report</h2>
@@ -106,9 +106,9 @@ Data
 
 <h2>Known limitations</h2>
 <ul>
-  <li>Water level severity is self-reported and qualitative by design — not a substitute for instrumented gauge data.</li>
+  <li>Water level severity is self-reported and qualitative by design ,not a substitute for instrumented gauge data.</li>
   <li>Location defaults to <code>(0.0, 0.0)</code> if no cached GPS fix is available at submission time; this is a known gap to improve (show an explicit error state instead).</li>
-  <li>No in-app map view in this version (see below) — reports can still be viewed and cross-referenced by their stored coordinates externally.</li>
+  <li>No in-app map view in this version (see below) , reports can still be viewed and cross-referenced by their stored coordinates externally.</li>
 </ul>
 
 <h2>Possible next steps</h2>
